@@ -167,13 +167,13 @@ class SecondActivity : AppCompatActivity() {
         check()
     }
 
-    fun doNotLiked(view: View) {
+    fun didNotLike(view: View) {
         skipFilms.add(jsonOfFilm.results.get(randomNumbers[i]).title)
         i++
         check()
     }
 
-    fun doNotWatched(view: View) {
+    fun didNotWatch(view: View) {
         i++
         check()
     }

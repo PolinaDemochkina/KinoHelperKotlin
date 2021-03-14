@@ -9,181 +9,181 @@
 
     <CheckBox
         android:id="@+id/Action"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/action"
-        app:layout_constraintStart_toStartOf="@+id/Comedy"
-        app:layout_constraintTop_toBottomOf="@+id/Comedy" />
-
-    <CheckBox
-        android:id="@+id/Horror"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/horror"
-        app:layout_constraintStart_toStartOf="@+id/Animation"
-        app:layout_constraintTop_toBottomOf="@+id/Animation" />
-
-    <CheckBox
-        android:id="@+id/Drama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/drama"
-        app:layout_constraintStart_toStartOf="@+id/Thriller"
-        app:layout_constraintTop_toBottomOf="@+id/Thriller" />
-
-    <CheckBox
-        android:id="@+id/Comedy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="36dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/comedy"
-        app:layout_constraintStart_toEndOf="@+id/Adventure"
-        app:layout_constraintTop_toBottomOf="@+id/Rule" />
-
-    <CheckBox
-        android:id="@+id/Mystery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/mystery"
-        app:layout_constraintStart_toStartOf="@+id/Drama"
-        app:layout_constraintTop_toBottomOf="@+id/Drama" />
-
-    <CheckBox
-        android:id="@+id/Animation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/animation"
-        app:layout_constraintStart_toStartOf="@+id/Adventure"
-        app:layout_constraintTop_toBottomOf="@+id/Adventure" />
-
-    <CheckBox
-        android:id="@+id/Thriller"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/thriller"
-        app:layout_constraintStart_toStartOf="@+id/Action"
-        app:layout_constraintTop_toBottomOf="@+id/Action" />
-
-    <CheckBox
-        android:id="@+id/Family"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/family"
-        app:layout_constraintStart_toStartOf="@+id/Horror"
-        app:layout_constraintTop_toBottomOf="@+id/Horror" />
-
-    <CheckBox
-        android:id="@+id/Crime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/crime"
-        app:layout_constraintStart_toStartOf="@+id/War"
-        app:layout_constraintTop_toBottomOf="@+id/War" />
-
-    <CheckBox
-        android:id="@+id/Documentary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/documentary"
-        app:layout_constraintStart_toStartOf="@+id/Crime"
-        app:layout_constraintTop_toBottomOf="@+id/Crime" />
-
-    <CheckBox
-        android:id="@+id/War"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/war"
-        app:layout_constraintStart_toStartOf="@+id/Fantasy"
-        app:layout_constraintTop_toBottomOf="@+id/Fantasy" />
-
-    <CheckBox
-        android:id="@+id/Adventure"
-        android:layout_width="wrap_content"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:onClick="blockCheckBox"
-        android:text="@string/adventure"
+        android:text="@string/action"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Rule" />
 
     <CheckBox
-        android:id="@+id/Fantasy"
-        android:layout_width="wrap_content"
+        android:id="@+id/Horror"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
-
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginRight="62dp"
+        android:layout_marginTop="24dp"
         android:onClick="blockCheckBox"
-        android:text="@string/fantasy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Comedy"
-        app:layout_constraintTop_toBottomOf="@+id/Rule" />
-
-    <CheckBox
-        android:id="@+id/History"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="blockCheckBox"
-        android:text="@string/history"
-        app:layout_constraintStart_toStartOf="@+id/Family"
+        android:text="@string/horror"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Science"
         app:layout_constraintTop_toBottomOf="@+id/Family" />
 
     <CheckBox
-        android:id="@+id/Science"
-        android:layout_width="wrap_content"
+        android:id="@+id/Drama"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/drama"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Comedy"
+        app:layout_constraintTop_toBottomOf="@+id/Comedy" />
+
+    <CheckBox
+        android:id="@+id/Comedy"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/comedy"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Action"
+        app:layout_constraintTop_toBottomOf="@+id/Action" />
+
+    <CheckBox
+        android:id="@+id/Mystery"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/mystery"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Fantasy"
+        app:layout_constraintTop_toBottomOf="@+id/Fantasy" />
+
+    <CheckBox
+        android:id="@+id/Animation"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:onClick="blockCheckBox"
-        android:text="@string/science_fiction"
+        android:text="@string/animation"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rule" />
+
+    <CheckBox
+        android:id="@+id/Thriller"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/thriller"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/Mystery"
         app:layout_constraintTop_toBottomOf="@+id/Mystery" />
 
     <CheckBox
-        android:id="@+id/Romance"
-        android:layout_width="wrap_content"
+        android:id="@+id/Family"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/family"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Horror"
+        app:layout_constraintTop_toBottomOf="@+id/Crime" />
+
+    <CheckBox
+        android:id="@+id/Crime"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/crime"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Family"
+        app:layout_constraintTop_toBottomOf="@+id/Adventure" />
+
+    <CheckBox
+        android:id="@+id/Documentary"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/documentary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Animation"
+        app:layout_constraintTop_toBottomOf="@+id/Animation" />
+
+    <CheckBox
+        android:id="@+id/Adventure"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="blockCheckBox"
-        android:text="@string/romance"
+        android:text="@string/adventure"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Crime"
+        app:layout_constraintTop_toBottomOf="@+id/Rule" />
+
+    <CheckBox
+        android:id="@+id/Fantasy"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/fantasy"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/Documentary"
         app:layout_constraintTop_toBottomOf="@+id/Documentary" />
+
+    <CheckBox
+        android:id="@+id/History"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/history"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/Drama"
+        app:layout_constraintTop_toBottomOf="@+id/Drama" />
+
+    <CheckBox
+        android:id="@+id/Science"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/science_fiction"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/Thriller"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Romance"
+        app:layout_constraintTop_toBottomOf="@+id/Horror" />
+
+    <CheckBox
+        android:id="@+id/Romance"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="blockCheckBox"
+        android:text="@string/romance"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/History"
+        app:layout_constraintTop_toBottomOf="@+id/History" />
 
     <TextView
         android:id="@+id/textView"
         style="@android:style/Widget.DeviceDefault.Light.TextView.SpinnerItem"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="#20241F"
         android:linksClickable="false"
         android:text="@string/step_1_choosing_movie_genres"
@@ -216,16 +216,20 @@
         android:id="@+id/Age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/i_m_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/NextButton"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         android:enabled="false"
         android:onClick="nextStep"
         android:text="@string/next"

@@ -28,7 +28,7 @@ class FirstActivity : AppCompatActivity() {
         genres = listOf (Action, Adventure, Animation, Comedy, Crime,
             Documentary, Drama, Family, Fantasy,
             History, Horror, Mystery, Romance, Science,
-            Thriller, War)
+            Thriller)
     }
 
     fun blockCheckBox(view: View) {
