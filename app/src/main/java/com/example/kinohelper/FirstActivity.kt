@@ -12,10 +12,22 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
+/**
+ * First step (Genres)
+ * @author Polina Demochkina
+ */
 class FirstActivity : AppCompatActivity() {
+    /**
+     * All available genres
+     */
     private var genres: List<CheckBox>? = null
+
     companion object {
         var age: Boolean = false
+
+        /**
+         * Genre IDs
+         */
         var ids: MutableList<Int> = mutableListOf()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +40,9 @@ class FirstActivity : AppCompatActivity() {
             Thriller)
     }
 
+    /**
+     * Function to disabling checkboxes after choosing max allowed number of genres
+     */
     fun blockCheckBox(view: View) {
         var numberOfCheckMark = 0
         genres?.forEach { genre ->
@@ -47,10 +62,13 @@ class FirstActivity : AppCompatActivity() {
         NextButton.isEnabled = numberOfCheckMark > 0
     }
 
+    /**
+     * Function for sending a request and parsing the result
+     */
     fun nextStep(view: View) {
         age = Age.isChecked
         var data: String?
-        "https://api.themoviedb.org/3/genre/movie/list?api_key=ec7e318de0e8caf8d6d9c6bbac87ed0e&language=en-US"
+        getString(R.string.Step1_Connection_link)
         .httpGet()
         .responseString { request, response, result ->
             when (result) {
@@ -74,8 +92,14 @@ class FirstActivity : AppCompatActivity() {
     }
 }
 
+/**
+ * Class to parse json response string
+ */
 @Serializable
 data class GenreList(val genres: List<Genre>)
 
+/**
+ * Genre class
+ */
 @Serializable
 data class Genre (val id: Int, val name: String)

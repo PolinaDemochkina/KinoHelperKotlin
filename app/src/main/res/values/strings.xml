@@ -25,4 +25,10 @@
     <string name="next">Next</string>
     <string name="step_3_recommendations">Step 3: Recommendations</string>
     <string name="view_description">Read description</string>
+    <string name="close">Close</string>
+    <string name="description">The description for this movie is not available :(</string>
+    <string name="Step1.Connection.link">https://api.themoviedb.org/3/genre/movie/list?api_key=ec7e318de0e8caf8d6d9c6bbac87ed0e&amp;language=en-US</string>
+    <string name="Step2.Connection.link">https://api.themoviedb.org/3/discover/movie?api_key=ec7e318de0e8caf8d6d9c6bbac87ed0e&amp;language=en-US&amp;sort_by=popularity.desc&amp;include_adult=%1$s&amp;include_video=false&amp;page=%2$d&amp;with_genres=%3$d</string>
+    <string name="Step2.AddFilm.link">https://api.themoviedb.org/3/movie/%1$d/similar?api_key=ec7e318de0e8caf8d6d9c6bbac87ed0e&amp;language=en-US&amp;page=1</string>
+    <string name="Step2_3.poster_path">https://image.tmdb.org/t/p/original%1$s</string>
 </resources>
