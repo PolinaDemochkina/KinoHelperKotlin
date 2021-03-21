@@ -1,16 +1,16 @@
 package com.example.kinohelper
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
+import androidx.appcompat.app.AppCompatActivity
 import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_first.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import com.github.kittinunf.result.Result
 
 class FirstActivity : AppCompatActivity() {
     private var genres: List<CheckBox>? = null
@@ -52,7 +52,7 @@ class FirstActivity : AppCompatActivity() {
         var data: String?
         "https://api.themoviedb.org/3/genre/movie/list?api_key=ec7e318de0e8caf8d6d9c6bbac87ed0e&language=en-US"
         .httpGet()
-        .responseString { _, _, result ->
+        .responseString { request, response, result ->
             when (result) {
                 is Result.Failure ->
                     println(result.getException())

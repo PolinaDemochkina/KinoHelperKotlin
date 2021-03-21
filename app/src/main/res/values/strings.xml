@@ -23,5 +23,6 @@
     <string name="home">HOME</string>
     <string name="didn_t_watch">Didn\'t watch</string>
     <string name="next">Next</string>
-    <string name="step_3_movie_recommendations">Step 3: Movie recommendations</string>
+    <string name="step_3_recommendations">Step 3: Recommendations</string>
+    <string name="view_description">Read description</string>
 </resources>

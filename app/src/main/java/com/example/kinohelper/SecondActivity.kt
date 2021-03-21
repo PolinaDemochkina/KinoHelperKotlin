@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
@@ -24,11 +25,13 @@ class SecondActivity : AppCompatActivity() {
     private var i:Int = 0
     private lateinit var jsonOfFilm: com.example.kinohelper.Result
     private var check: Boolean = false
+    private var showDescription = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
+        FilmDescription_step2.movementMethod = ScrollingMovementMethod()
         getRandomNumbers()
         check()
     }
@@ -44,7 +47,7 @@ class SecondActivity : AppCompatActivity() {
                 clearData()
             }
             if (FirstActivity.ids.size == 1) {
-                connection(FirstActivity.ids[0]);
+                connection(FirstActivity.ids[0])
             }
             else if (FirstActivity.ids.size == 2) {
                 if (films.size < 3)
@@ -56,7 +59,7 @@ class SecondActivity : AppCompatActivity() {
                     connection(FirstActivity.ids[1])
                 }
                 else
-                    connection(FirstActivity.ids[1]);
+                    connection(FirstActivity.ids[1])
             }
             else if (FirstActivity.ids.size == 3) {
                 if (films.size < 2)
@@ -91,12 +94,12 @@ class SecondActivity : AppCompatActivity() {
         if (i == 0) {
             "https://api.themoviedb.org/3/discover/movie?api_key=ec7e318de0e8caf8d6d9c6bbac87ed0e&language=en-US&sort_by=popularity.desc&include_adult=${FirstActivity.age}&include_video=false&page=$page&with_genres=$id"
             .httpGet()
-            .responseString { _, _, result ->
+            .responseString { request, response, result ->
                 when (result) {
                     is Result.Failure ->
                         println(result.getException())
                     is Result.Success -> {
-                        jsonOfFilm = Json.decodeFromString<com.example.kinohelper.Result>(result.get())
+                        jsonOfFilm = Json.decodeFromString(result.get())
                         checkAndShowFilm()
                     }
                 }
@@ -106,7 +109,7 @@ class SecondActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun checkAndShowFilm() {
-        var flag: Boolean = false
+        var flag = false
         for (sFilm in skipFilms) {
             if (sFilm == jsonOfFilm.results[randomNumbers[i]].title) {
                 i++
@@ -123,9 +126,9 @@ class SecondActivity : AppCompatActivity() {
                     Picasso.get().load("https://image.tmdb.org/t/p/original${jsonOfFilm.results[randomNumbers[i]].poster_path}").into(FilmPoster_step2)
 
                 if (jsonOfFilm.results[randomNumbers[i]].release_date == "")
-                    FilmDescription_step2.text = jsonOfFilm.results[randomNumbers[i]].title
+                    FilmHeading_step2.text = jsonOfFilm.results[randomNumbers[i]].title
                 else
-                    FilmDescription_step2.text = "${jsonOfFilm.results[randomNumbers[i]].title} (${jsonOfFilm.results[randomNumbers[i]].release_date})"
+                    FilmHeading_step2.text = "${jsonOfFilm.results[randomNumbers[i]].title} (${jsonOfFilm.results[randomNumbers[i]].release_date})"
                 Counter_step2.text = "${films.size}/6"
             }
         } else check()
@@ -141,7 +144,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     private fun getRandomNumbers() {
-        var flag: Boolean = false
+        var flag = false
         var numberOfFilms = 0
         while (numberOfFilms < 5) {
             val number = Random.nextInt(20)
@@ -164,14 +167,14 @@ class SecondActivity : AppCompatActivity() {
     fun addFilm(view: View) {
         "https://api.themoviedb.org/3/movie/${jsonOfFilm.results[randomNumbers[i]].id}/similar?api_key=ec7e318de0e8caf8d6d9c6bbac87ed0e&language=en-US&page=1"
         .httpGet()
-        .responseString { _, _, result ->
+        .responseString { request, response, result ->
             when (result) {
                 is Result.Failure ->
                     println(result.getException())
                 is Result.Success -> {
                     val jsonOfNewFilm = Json.decodeFromString<com.example.kinohelper.Result>(result.get())
                     if (i < jsonOfNewFilm.results.size) {
-                        var flag: Boolean = false
+                        var flag = false
                         for (sFilm in skipFilms) {
                             if (sFilm == jsonOfNewFilm.results[i].title) {
                                 flag = true
@@ -201,6 +204,30 @@ class SecondActivity : AppCompatActivity() {
     fun didNotWatch(view: View) {
         i++
         check()
+    }
+
+    fun openOrClose(view: View) {
+        if (showDescription)
+            closeDescription()
+        else
+            viewDescription()
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun viewDescription() {
+        Blackout_step2.visibility = View.VISIBLE
+        FilmDescription_step2.visibility = View.VISIBLE
+        FilmDescription_step2.text = jsonOfFilm.results[randomNumbers[i]].overview
+        ViewDescription.text = "close"
+        showDescription = true
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun closeDescription() {
+        Blackout_step2.visibility = View.GONE
+        FilmDescription_step2.visibility = View.GONE
+        ViewDescription.text = "Description"
+        showDescription = false
     }
 }
 
